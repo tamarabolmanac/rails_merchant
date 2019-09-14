@@ -1,0 +1,11 @@
+<h1>Test</h1>
+<% @order_items.each do |item| %>
+<div>
+      <p><%=item.product.title %> </p><br>
+      <p><%=item.quantity %> </p><br>
+      <p><%= print_price(item.product.price) %> </p><br>
+      <p><%= print_price item.subtotal %></p><br>
+      <p><%= image_tag "products/#{item.product.image_url}" %></p><br>
+      <p><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></p><hr>
+  </div>
+  <% end %>
